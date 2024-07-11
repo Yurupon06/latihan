@@ -23,7 +23,7 @@ class SiswaFactory extends Factory
             'name' => fake()->name(),
             'id_guru' => $this->faker->randomElement($guru),
             'jk' => $this->faker->randomElement($enum),
-            'notelp' => $this->faker->regexify('[0-9]{12}'),
+            'notelp' => $this->faker->regexify('08[0-9]{10}'),
         ];
     }
 }

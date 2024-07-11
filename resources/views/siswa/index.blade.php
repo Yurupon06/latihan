@@ -10,7 +10,7 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navigation">
       <div class="mx-auto">
-        <form method="GET" action="{{ route('guru.index') }}" class="">
+        <form method="GET" action="{{ route('siswa.index') }}" class="">
           <div class="input-group no-border">
               <input type="search" name="search" class="form-control" placeholder="Search name...">
               <div class="input-group-append">
