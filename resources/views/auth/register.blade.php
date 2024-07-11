@@ -116,7 +116,7 @@
                     <button type="submit">Register</button>
                     <p class="message">Already Have Account? <a href="{{ route('login') }}">Login</a></p>
                 </form>
-              </div>
+            </div>
         </form>
     </div>
 

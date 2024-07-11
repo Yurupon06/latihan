@@ -15,6 +15,9 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
+
+
+
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -37,10 +40,16 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
+
+
+
     public function showLoginForm()
     {
         return view('auth.login');
     }
+
+
+
 
     public function login(Request $request)
     {
@@ -59,10 +68,16 @@ class AuthController extends Controller
         return redirect()->back()->withErrors(['email' => 'Invalid credentials'])->withInput();
     }
 
+
+
+
     public function showForgotForm()
     {
         return view('auth.forgot');
     }
+
+
+
 
     public function forgot(Request $request)
     {
@@ -78,8 +93,12 @@ class AuthController extends Controller
         if ($user->roles === 'admin') {
             return back()->withErrors(['email' => 'Admin cannot reset password']);
         }
+        
         return back()->with(['email' => $request->email]);
     }
+
+
+
 
     public function reset(Request $request)
     {
@@ -94,6 +113,8 @@ class AuthController extends Controller
 
         return redirect()->route('login')->with('status', 'Password has been reset');
     }
+
+
 
 
     public function logout()

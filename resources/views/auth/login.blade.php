@@ -116,7 +116,7 @@
                     <button type="submit">login</button>
                      <p class="message">Not registered? <a href="{{ route('register') }}">Create an account</a></p>
                 </form>
-              </div>
+            </div>
         </form>
     </div>
 

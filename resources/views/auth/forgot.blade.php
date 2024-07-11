@@ -101,7 +101,7 @@
 </head>
 <body>
     <div class="login-page">
-        <form method="POST" action="{{ route('password.search') }}">
+        <form method="POST" action="{{ route('email.search') }}">
             @csrf
             <div class="form">
                 <h1>Forgot Password</h1>
