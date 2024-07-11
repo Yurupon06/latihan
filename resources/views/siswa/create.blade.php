@@ -48,7 +48,7 @@
 
                     <div class="ms-3 me-3 text-end">
                       <a href="{{ route('siswa.index') }}" class="btn btn-danger bg-gradient-primary w-15 my-4 mb-2">Cancel</a>
-                      <button type="button" id="save" class="btn btn-success bg-gradient-success w-15 my-4 mb-2">Tambah</button> 
+                      <button type="submit" id="save" class="btn btn-success bg-gradient-success w-15 my-4 mb-2">Tambah</button> 
                     </div>     
                 </form>
               </div>
