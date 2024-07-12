@@ -33,7 +33,7 @@ class AuthController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => $request->password,
             'roles' => 'customer'
         ]);
 
@@ -60,7 +60,8 @@ class AuthController extends Controller
             session()->flash('message', 'Logged in as ' . $user->name);
             if ($user->roles === 'admin') {
                 return redirect('dashboard');
-            } else {
+            }
+            if ($user->roles === 'customer') {
                 return redirect('user');
             }
         }
@@ -90,10 +91,10 @@ class AuthController extends Controller
         if (!$user) {
             return back()->withErrors(['email' => 'Email not found']);
         }
-        if ($user->roles === 'admin') {
-            return back()->withErrors(['email' => 'Admin cannot reset password']);
+        if ($user->roles == 'admin') {
+            return back()->withErrors(['email' => 'Invalid Email']);
         }
-        
+
         return back()->with(['email' => $request->email]);
     }
 

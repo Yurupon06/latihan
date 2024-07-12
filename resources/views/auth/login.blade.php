@@ -111,7 +111,7 @@
                     @enderror
                     <input type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email Address" required>
                     <input type="password" name="password" id="password" placeholder="Password" required>
-                    <p class="message"><a href="{{ route('password.forgot') }}">Forget Password</a></p>
+                    <p class="message"><a href="{{ route('password.request') }}">Forgot Password ?</a></p>
                     <br>
                     <button type="submit">login</button>
                      <p class="message">Not registered? <a href="{{ route('register') }}">Create an account</a></p>
