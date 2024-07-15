@@ -117,6 +117,32 @@ class AuthController extends Controller
 
 
 
+    public function qrLogin($token)
+    {
+        // Cari pengguna berdasarkan token qr_login_token
+        $user = User::where('qr_login_token', $token)->first();
+    
+        // Jika pengguna ditemukan dengan token yang sesuai
+        if ($user) {
+            // Login pengguna menggunakan Auth::login
+            Auth::login($user);
+            session()->flash('message', 'Logged in as ' . $user->name);
+            // Redirect ke halaman yang sesuai berdasarkan peran pengguna
+            if ($user->roles === 'admin') {
+                return redirect()->route('dashboard.index');
+            } elseif ($user->roles === 'customer') {
+                return redirect()->route('user.index');
+            }
+        }
+    
+        // Jika token tidak valid atau kadaluarsa, kembalikan ke halaman login dengan pesan kesalahan
+        return redirect()->route('login')->withErrors(['Invalid or expired QR code']);
+    }
+    
+    
+    
+
+
 
     public function logout()
     {

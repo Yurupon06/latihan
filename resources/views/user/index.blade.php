@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <span class="nav-link">{{ Auth::user()->name }}</span>
+                        <a href="{{ route('user.qrcode', Auth::user()->id) }}" class="nav-link">{{ Auth::user()->name }}</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link text-body font-weight-bold px-0 ms-4">

@@ -115,6 +115,7 @@
                     <br>
                     <button type="submit">login</button>
                      <p class="message">Not registered? <a href="{{ route('register') }}">Create an account</a></p>
+                     <p class="message"><a href="{{ route('qrlogin') }}">qrLogin</a></p>
                 </form>
             </div>
         </form>

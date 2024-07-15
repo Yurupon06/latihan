@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->enum('roles', ['admin', 'customer'])->default('customer');
             $table->rememberToken();
+            $table->string('qr_login_token', 60)->nullable();
             $table->timestamps();
         });
 
